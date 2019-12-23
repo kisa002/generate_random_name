@@ -1,0 +1,142 @@
+button {
+    width: 20vw;
+    
+    padding: 2% 0;
+    margin: 0 1%;
+    position: relative;
+    
+    color: #EEE;
+    font-size: calc(0.9rem + 0.9vw);
+    font-weight: 400;
+    background: transparent;
+    
+    border: 2px solid #FFF;
+    border-radius: 10px;
+    
+    transition: 0.4s;
+}
+
+.btn-1::before {
+    content: "";
+    
+    width: 100%;
+    height: 0;
+    
+    top: 100%;
+    left: 0;
+    
+    transition: 0.4s;
+    
+    position: absolute;
+    z-index: -1;
+}
+
+.btn-1:hover {
+    color: #444;
+}
+
+.btn-1:hover::before {
+    content: "";
+    border-radius: 5px;
+    
+    width: 100%;
+    height: 101%;
+    
+    top: 0;
+    left: 0;
+    
+    color: black;
+    transition: 0.4s;
+    background: #FFF;
+    
+    position: absolute;
+    z-index: -1;
+}
+
+.btn-1[selected] {
+    color: #FFF;
+    background: #444444;
+}
+
+.btn-2.prev:hover {
+    color: #444;
+}
+
+.btn-2.prev::before {
+    content: '';
+    border-radius: 5px;
+    position: absolute;
+    
+    width: 0;
+    height: 100%;
+    
+    top: 0;
+    left: 0;
+    
+    color: #444;
+    transition: 0.4s;
+    
+    z-index: -1;
+}
+
+.btn-2.prev:hover::before {
+    content: '';
+    border-radius: 5px;
+    
+    width: 100%;
+    height: 100%;
+    
+    top: 0;
+    left: 0;
+    
+    color: #444;
+    transition: 0.4s;
+    background: #FFF;
+
+    z-index: -1;
+}
+
+.btn-2.next:hover {
+    color: #444;
+}
+
+.btn-2.next::before {
+    content: '';
+    border-radius: 5px;
+    position: absolute;
+    
+    width: 0;
+    height: 100%;
+    
+    top: 0;
+    left: 100%;
+    
+    color: #444;
+    transition: 0.4s;
+    
+    z-index: -1;
+}
+
+.btn-2.next:hover::before {
+    content: '';
+    border-radius: 5px;
+    
+    width: 100%;
+    height: 100%;
+    
+    top: 0;
+    left: 0;
+    
+    color: #444;
+    transition: 0.4s;
+    background: #EFEF;
+
+    z-index: -1;
+}
+
+
+.next,.create {
+/*    width: 100%;*/
+/*    margin: 0 35%;*/
+/*    transform: translateY(100%);*/
+}

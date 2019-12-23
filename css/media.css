@@ -1,0 +1,26 @@
+@media (max-width: 768px) {
+    .first,.second {
+        width: 100%;
+    }
+    
+    @keyframes animSlideLeft {
+        from { }
+        to {
+            -webkit-transform: translateX(-200%);
+            transform: translateX(-200%);
+        }
+    }
+
+    @keyframes animSlideRight {
+        from {
+            -webkit-transform: translateX(-200%);
+            transform: translateX(-200%);
+        }
+        to {
+            -webkit-transform: translateX(0%);
+            transform: translateX(0%);
+/*            animation-direction:alternate-reverse;*/
+        }
+    }
+
+}
