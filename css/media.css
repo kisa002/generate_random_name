@@ -1,5 +1,9 @@
 @media (max-width: 768px) {
-    .first,.second {
+    .title {
+        font-size: calc(2em + 2vw);
+    }
+    
+    .first,.second,.third {
         width: 100%;
     }
     
@@ -22,5 +26,26 @@
 /*            animation-direction:alternate-reverse;*/
         }
     }
+    
+    @keyframes animSlidePrevResult {
+        from {
+            -webkit-transform: translateX(-400%);
+            transform: translateX(-400%);
+        }
+        to {
+            -webkit-transform: translateX(-200%);
+            transform: translateX(-200%);
+        }
+    }
 
+    @keyframes animSlideNextResult {
+        from {
+            -webkit-transform: translateX(-200%);
+            transform: translateX(-200%);
+        }
+        to {
+            -webkit-transform: translateX(-400%);
+            transform: translateX(-400%);
+        }
+    }
 }
