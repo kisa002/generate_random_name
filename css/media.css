@@ -7,6 +7,11 @@
         font-size: calc(1.5em + 1.5vw);
     }
     
+    .toast {
+        height: calc(1.7rem + 1.7vw);
+        font-size: calc(0.55rem + 0.55vw);
+    }
+    
     .first,.second,.third {
         width: 100%;
     }

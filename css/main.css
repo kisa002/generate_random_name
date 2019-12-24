@@ -118,8 +118,8 @@ header {
 }
 
 .toast {
-    width: 18vw;
-    height: 5vh;
+    width: calc(10rem + 10vw);
+    height: calc(1.35rem + 1.35vw);
     
     display: flex;
     justify-content: center;
@@ -131,6 +131,7 @@ header {
     
     color: #333;
     background: #FFF;
+    font-size: calc(0.45rem + 0.45vw);
     
     transition: 1s;
     border-radius: 10vw;
@@ -139,10 +140,8 @@ header {
 }
 
 .toast[show] {
-    width: 18vw;
+/*    width: 18vw;*/
     bottom: 6vh;
-
-    font-size: calc(0.5rem + 0.5vw);
 }
 
 div {
