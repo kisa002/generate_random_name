@@ -6,15 +6,37 @@ body {
     overflow: hidden;
 }
 
-.title {
+header {
     width: 100%;
+    height: calc(9rem + 9vh);
+    
+    margin-top: calc(4rem + 4vh);
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    position: absolute;
+    transition: 1s;
+}
+
+.title {
+/*    width: 100%;*/
     
     font-size: calc(3em + 3vw);
     text-align: center;
     
-    top: 17%;
+    transition: 1s;
+}
+
+.subtitle {
+/*    width: 100%;*/
     
-    position: absolute;
+    margin-top: calc(-0.5rem + -0.5vh);
+    font-size: calc(1.2em + 1.2vw);
+    text-align: center;
+    
+    transition: 1s;
 }
 
 .container {
@@ -63,6 +85,15 @@ body {
 .options {
     display: flex;
     justify-content: center;
+}
+
+.results {
+    display: flex;
+    flex-wrap: wrap;
+    
+    justify-content: center;
+    
+    transition: 0.7s;
 }
 
 .control {

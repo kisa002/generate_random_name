@@ -2,7 +2,7 @@ $(document).ready(function() {
     words = [];
     
     init();
-    console.log(getRandomWord());
+//    console.log(getRandomWord());
     
     function init() {
         addWord('니');

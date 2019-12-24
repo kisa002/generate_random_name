@@ -1,6 +1,10 @@
 @media (max-width: 768px) {
     .title {
-        font-size: calc(2em + 2vw);
+        font-size: calc(4em + 4vw);
+    }
+    
+    .subtitle {
+        font-size: calc(1.5em + 1.5vw);
     }
     
     .first,.second,.third {
