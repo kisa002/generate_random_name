@@ -117,6 +117,34 @@ header {
     height: 8vh;
 }
 
+.toast {
+    width: 18vw;
+    height: 5vh;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    bottom: -10vh;
+    left: 50%;
+    transform: translateX(-50%);
+    
+    color: #333;
+    background: #FFF;
+    
+    transition: 1s;
+    border-radius: 10vw;
+    
+    position: fixed;
+}
+
+.toast[show] {
+    width: 18vw;
+    bottom: 6vh;
+
+    font-size: calc(0.5rem + 0.5vw);
+}
+
 div {
 /*    border: 2px solid #333333;*/
 }

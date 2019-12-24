@@ -26,18 +26,9 @@ $(document).ready(function() {
         
         if(step == 3) {
             amount = count == 1 ? 5 : count == 10 ? 3.5 : count == 20 ? 1.5 : count == 30 ? -0.5 : 0;
-            
             $('header').css('margin-top', 'calc(' + amount + 'rem + ' + amount + 'vh)');
-            $('.third .results').children().remove();
             
-            for(i=0; i<count; i++) {
-                
-                word = '';
-                for(j=0; j<length; j++) {
-                    word += getRandomWord();
-                }
-                $('.third .results').append('<button class="btn-3">' + word + '</button>');
-            }
+            createWords();
             $('.container').css('animation', 'animSlideNextResult 1s ease both');
         }
         else {
@@ -67,16 +58,34 @@ $(document).ready(function() {
     }
     
     function animScaleUp() {
+        createWords();
+        
+        $('.results').css('transform', 'scale(1)');
+    }
+    
+    function createWords() {
         $('.third .results').children().remove();
         for(i=0; i<count; i++) {
             word = '';
             for(j=0; j<length; j++) {
                 word += getRandomWord();
             }
-            $('.third .results').append('<button class="btn-3">' + word + '</button>');
+            btn = $('.third .results').append('<button class="btn-3">' + word + '</button>');
+            
+            btn.children().last().on('click', function(e) {
+                copyToClipboard($(this).text());
+                showToast($(this).text() + '를 복사 하였습니다.');
+            });
         }
-        
-        $('.results').css('transform', 'scale(1)');
+    }
+    
+    function copyToClipboard(val) {
+        var t = document.createElement("textarea");
+        document.body.appendChild(t);
+        t.value = val;
+        t.select();
+        document.execCommand('copy');
+        document.body.removeChild(t);
     }
     
     function nextStep() {
@@ -91,6 +100,27 @@ $(document).ready(function() {
             $('.first').css('display', 'none');
             $('.second').css('display', 'block')
         }
+    }
+    
+    var toastTimer;
+    
+    function showToast(text) {
+        if($('.toast').attr('show') == "") {
+            hideToast();
+            
+            toastTimer = setTimeout(() => showToast(text), 400);
+            return;
+        }
+        
+        $('.toast').text(text);
+        $('.toast').attr('show', '');
+        
+        toastTimer = setTimeout(() => hideToast(), 1500);
+    }
+    
+    function hideToast() {
+        clearTimeout(toastTimer);
+        $('.toast').removeAttr('show');
     }
     
     function init() {
